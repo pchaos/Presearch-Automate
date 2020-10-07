@@ -60,6 +60,10 @@ try:
         time.sleep(2)
         #  driver.implicitly_wait(15)
         driver.switch_to.default_content()
+    
+    if os.path.exists(cookieFileName):
+        # 重新登录系统，删除以前的cookie文件
+        os.remove(cookieFileName)
 except Exception as e:
     url = 'https://www.presearch.org/login'
     print("using cookies, no need login")
