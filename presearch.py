@@ -16,7 +16,8 @@ email=os.getenv("EMAIL")
 password=os.getenv("PASSWORD")
 searchcounts=int(os.getenv("SEARCHCOUNTS"))  # 查询次数
 headless=bool(int(os.getenv("HEADLESS")))
-
+if headless:
+    print("headless mode")
 cookieFileName = 'presearch.cookies.pkl'
 PROXY = "127.0.0.1:1080"  #  HOST:PORT
 chrome_options = webdriver.ChromeOptions()
