@@ -15,10 +15,12 @@ load_dotenv(dotenv_path=env_path)
 email=os.getenv("EMAIL")
 password=os.getenv("PASSWORD")
 searchcounts=int(os.getenv("SEARCHCOUNTS"))  # 查询次数
+headless=bool(int(os.getenv("HEADLESS")))
 
 cookieFileName = 'presearch.cookies.pkl'
 PROXY = "127.0.0.1:1080"  #  HOST:PORT
 chrome_options = webdriver.ChromeOptions()
+chrome_options.headless = headless 
 chrome_options.add_argument('--proxy-server=%s' % PROXY)
 chrome_options.add_argument("ignore-certificate-errors")
 chrome_options.add_argument("--window-size=1280,1080")
